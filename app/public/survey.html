@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FriendFinder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container m-3">
+        <form>
+            <h2 class="mb-3">Survey</h2>
+            <div class="form-group">
+                <label for="name">Name (Required)</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="photoLink">Link to Photo (Required)</label>
+                <input type="text" class="form-control" id="photoLink">
+            </div>
+            <div class="form-group">
+                <label for="select1">You prioritize family above all else.</label>
+                <select class="form-control" id="select1">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select2">You like to go on long drives.</label>
+                <select class="form-control" id="select2">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select3">You rarely procrastinate.</label>
+                <select class="form-control" id="select3">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select4">You like animals more than people.</label>
+                <select class="form-control" id="select4">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select5">You rather dine in than eat out. .</label>
+                <select class="form-control" id="select5">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select6">You don't mind eating a dessert for a meal.</label>
+                <select class="form-control" id="select6">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select7">You like to socialize in your free time.</label>
+                <select class="form-control" id="select7">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select8">You prefer dramas over action films.</label>
+                <select class="form-control" id="select8">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select9">You enjoy travelling.</label>
+                <select class="form-control" id="select9">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="select10">You enjoy fast food.</label>
+                <select class="form-control" id="select10">
+                    <option>Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success" id="match-me">Match Me!</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        $("#match-me").on("click", function(event) {
+          event.preventDefault();
+          var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photoLink").val().trim(),
+            select1: $("#select1").val(),
+            select2: $("#select1").val(),
+            select3: $("#select1").val(),
+            select4: $("#select1").val(),
+            select5: $("#select1").val(),
+            select6: $("#select1").val(),
+            select7: $("#select1").val(),
+            select8: $("#select1").val(),
+            select9: $("#select1").val(),
+            select10: $("#select1").val(),
+            
+          };
+    
+          // Question: What does this code do??
+          $.post("/api/friends", newFriend)
+            .then(function(data) {
+              console.log("survey.html", data);
+              alert("Adding friend...");
+            });
+        });
+      </script>
+    
+</body>
+
+</html>
