@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 
 <body>
@@ -68,7 +70,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="select5">You rather dine in than eat out. .</label>
+                <label for="select5">You rather dine in than eat out.</label>
                 <select class="form-control" id="select5">
                     <option>Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -92,6 +94,7 @@
             <div class="form-group">
                 <label for="select7">You like to socialize in your free time.</label>
                 <select class="form-control" id="select7">
+                    <option>Select An Option</option>
                     <option>1 (Strongly Disagree)</option>
                     <option>2</option>
                     <option>3</option>
@@ -135,33 +138,60 @@
             <button type="submit" class="btn btn-success" id="match-me">Match Me!</button>
         </form>
     </div>
+    <div class="modal modal1" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
-        $("#match-me").on("click", function(event) {
-          event.preventDefault();
-          var newFriend = {
-            name: $("#name").val().trim(),
-            photo: $("#photoLink").val().trim(),
-            select1: $("#select1").val(),
-            select2: $("#select1").val(),
-            select3: $("#select1").val(),
-            select4: $("#select1").val(),
-            select5: $("#select1").val(),
-            select6: $("#select1").val(),
-            select7: $("#select1").val(),
-            select8: $("#select1").val(),
-            select9: $("#select1").val(),
-            select10: $("#select1").val(),
-            
-          };
-    
-          $.post("/api/friends", newFriend)
-            .then(function(data) {
-              console.log("survey.html", data);
-              alert("Adding friend...");
+        $("#match-me").on("click", function (event) {
+            event.preventDefault();
+            var selscores = [
+                $("#select1").val(),
+                $("#select2").val(),
+                $("#select3").val(),
+                $("#select4").val(),
+                $("#select5").val(),
+                $("#select6").val(),
+                $("#select7").val(),
+                $("#select8").val(),
+                $("#select9").val(),
+                $("#select10").val(),
+            ];
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photoLink").val().trim(),
+                scores: selscores
+            };
+
+            $.post("/api/friends", newFriend)
+                .then(function (data) {
+                    console.log("survey.html", data);
+                    //alert("Adding friend...");
+                });
+            $(".modal1").modal({
+                closeClass: 'icon-remove',
+                closeText: '!'
             });
+
+
         });
-      </script>
-    
+    </script>
+
 </body>
 
 </html>
