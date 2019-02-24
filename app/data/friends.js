@@ -1,6 +1,7 @@
-[{
+var friends = [
+{
     "name":"Red Pikmin",
-    "photo":"https://www.google.com/imgres?imgurl=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fpikmin%2Fimages%2Fd%2Fd1%2FRedPikminHD.png%2Frevision%2Flatest%3Fcb%3D20130602192755&imgrefurl=https%3A%2F%2Fpikmin.fandom.com%2Fwiki%2FRed_Pikmin&docid=XyW8y4IVUH0whM&tbnid=9agS6dfvU5BiPM%3A&vet=10ahUKEwiS86ul2MHgAhUo54MKHab2DaMQMwhFKAAwAA..i&w=1500&h=1800&bih=642&biw=1422&q=red%20pikmin&ved=0ahUKEwiS86ul2MHgAhUo54MKHab2DaMQMwhFKAAwAA&iact=mrc&uact=8",
+    "photo":"https://vignette.wikia.nocookie.net/pikmin/images/d/d1/RedPikminHD.png/revision/latest?cb=20130602192755",
     "scores":[
         5,
         1,
@@ -47,8 +48,8 @@
       ]
   },
   {
-    "name":"Rock Pikmin",
-    "photo":"https://vignette.wikia.nocookie.net/pikmin/images/c/c1/RockPikminHD.png/revision/latest?cb=20130602191350",
+    "name":"Olimar",
+    "photo":"https://vignette.wikia.nocookie.net/theofficalsovietronalds/images/c/c0/Olimar_a.png/revision/latest?cb=20150414155442",
     "scores":[
         5,
         5,
@@ -64,3 +65,4 @@
   },
 ]
   
+module.exports = friends;

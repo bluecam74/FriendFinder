@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FriendFinder</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label for="select1">You prioritize family above all else.</label>
                 <select class="form-control" id="select1">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -39,7 +39,7 @@
             <div class="form-group">
                 <label for="select2">You like to go on long drives.</label>
                 <select class="form-control" id="select2">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -50,7 +50,7 @@
             <div class="form-group">
                 <label for="select3">You rarely procrastinate.</label>
                 <select class="form-control" id="select3">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -61,7 +61,7 @@
             <div class="form-group">
                 <label for="select4">You like animals more than people.</label>
                 <select class="form-control" id="select4">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -72,7 +72,7 @@
             <div class="form-group">
                 <label for="select5">You rather dine in than eat out.</label>
                 <select class="form-control" id="select5">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -83,7 +83,7 @@
             <div class="form-group">
                 <label for="select6">You don't mind eating a dessert for a meal.</label>
                 <select class="form-control" id="select6">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -94,18 +94,18 @@
             <div class="form-group">
                 <label for="select7">You like to socialize in your free time.</label>
                 <select class="form-control" id="select7">
-                    <option>Select An Option</option>
-                    <option>1 (Strongly Disagree)</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5 (Strongly Agree)</option>
+                    <option value="">Select An Option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="select8">You prefer dramas over action films.</label>
                 <select class="form-control" id="select8">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -116,7 +116,7 @@
             <div class="form-group">
                 <label for="select9">You enjoy travelling.</label>
                 <select class="form-control" id="select9">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -127,7 +127,7 @@
             <div class="form-group">
                 <label for="select10">You enjoy fast food.</label>
                 <select class="form-control" id="select10">
-                    <option>Select An Option</option>
+                    <option value="">Select An Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -138,58 +138,115 @@
             <button type="submit" class="btn btn-success" id="match-me">Match Me!</button>
         </form>
     </div>
-    <div class="modal modal1" tabindex="-1" role="dialog">
+    <div class="modal" id="modal1" tabindex="-1" role="dialog" style="height: 200px" ;>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
+                    <h5 class="modal-title" id="modal-title1"></h5>
                 </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                <div class="modal-body" id="modal-body1">
+                    <p>Please Fill Out All Fields</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>
+    <div class="modal" id="modal2" tabindex="-1" role="dialog" style="height: 500px;text-align:center;padding-bottom:20px;" ;>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
+                    <h5 class="modal-title" >You are matched with: </h5>
+                    <h3 id="modal-title2"></h3>
+                </div>
+                <div class="modal-body" >
+                    <img id="modal-body2" style="height: 350px;""></img>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
         $("#match-me").on("click", function (event) {
             event.preventDefault();
-            var selscores = [
-                $("#select1").val(),
-                $("#select2").val(),
-                $("#select3").val(),
-                $("#select4").val(),
-                $("#select5").val(),
-                $("#select6").val(),
-                $("#select7").val(),
-                $("#select8").val(),
-                $("#select9").val(),
-                $("#select10").val(),
-            ];
-            var newFriend = {
-                name: $("#name").val().trim(),
-                photo: $("#photoLink").val().trim(),
-                scores: selscores
-            };
+            var name = $("#name").val().trim();
+            var photo = $("#photoLink").val().trim();
+            var a = $("#select1").val();
+            var b = $("#select2").val();
+            var c = $("#select3").val();
+            var d = $("#select4").val();
+            var e = $("#select5").val();
+            var f = $("#select6").val();
+            var g = $("#select7").val();
+            var h = $("#select8").val();
+            var i = $("#select9").val();
+            var j = $("#select10").val();
 
-            $.post("/api/friends", newFriend)
-                .then(function (data) {
-                    console.log("survey.html", data);
-                    //alert("Adding friend...");
-                });
-            $(".modal1").modal({
-                closeClass: 'icon-remove',
-                closeText: '!'
+            verify();
+             
+
+                function verify() {
+                    if (name != "" && photo != "" && a != "" && b != "" && c != "" && d != "" && e != "" && f != "" && g != "" && h != "" && i != "" && j != "") {
+                        var selscores = [a, b, c, d, e, f, g, h, i, j];
+                        var newFriend = {
+                            name: name,
+                            photo: photo,
+                            scores: selscores
+                        };
+                        $.post("api/friends", newFriend, function (data) {
+                        console.log(data);
+                        });
+                        compareFriends(newFriend);
+
+                    }
+                    else {
+                        console.log("else executed");
+                        $("#modal1").modal('toggle');
+                    }
+                };
+
+                function compareFriends(newFriend) {
+                    $.get("api/friends", function (friends) {
+                        console.log(friends);
+                        var allDiffs = [];
+                        var diffsOnly = [];
+                        for (var i = 0; i < (friends.length-1); i++) {
+                            var deltaArr = [friends[i].name];
+                            var totalSum=0;
+                             for (var x = 0; x < 10; x++){
+                                var delta = Math.abs(friends[i].scores[x]-newFriend.scores[x])
+                                totalSum+=delta;
+                            }
+                            deltaArr.push(totalSum);
+                            diffsOnly.push(totalSum);
+                            allDiffs.push(deltaArr);
+                        }
+                        console.log("allDiffs: ", allDiffs);
+                        console.log("Diffs Only: ", diffsOnly);
+                        var smallest = Math.min.apply(null, diffsOnly);
+                        var best;
+
+                        for (var i = 0; i < (allDiffs.length); i++) {
+                            if (allDiffs[i][1] == smallest) {
+                                 best = allDiffs[i][0];
+                             }
+                             
+                        };
+                        console.log("best", best);
+                        for (var i = 0; i < (friends.length-1); i++) {
+                            if (best===friends[i].name) {
+                                $("#modal-title2").text(best);
+                                $("#modal-body2").attr("src", friends[i].photo);
+                                $("#modal2").modal('toggle');
+                            }
+                        }
+
+                        
+                    });
+                }
             });
-
-
-        });
     </script>
 
 </body>
